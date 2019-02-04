@@ -23,7 +23,7 @@ functions:
       - http:
           path: subscribe
           method: post
-  payment-method: # enter a new payment method
+  payment-method: # enter a new payment method with information
     handler: src/functions/mock.post
     events:
       - http:
@@ -39,7 +39,7 @@ functions:
     handler: src/functions/mock.post
     events:
       - http:
-          path: initiate-payment-intent
+          path: initiate-payment-intent/
           method: post
   payments:
     handler: src/functions/mock.get
