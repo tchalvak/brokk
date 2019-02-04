@@ -30,10 +30,16 @@ The first focus here will be the prototyping/CI stage.
 
     npm install -g serverless
 
-## Configure
-You will need to set up an AWS IAM user with the appropriate serverless provisioning stack permissions[permissions](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
+## Test
 
-## Deploy
+    python3 -m pytest ./src/tests
+
+## Deploy Infrastructure
+
+### Configure
+You will need to set up an AWS IAM user with the appropriate serverless provisioning [provisioning permissions](https://serverless.com/framework/docs/providers/aws/guide/credentials/).
+
+### Execute Deploy
 Deploy infrastructure to cloudformation from the serverless.yml file and assets
 
     sls deploy -v
