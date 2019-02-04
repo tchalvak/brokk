@@ -36,4 +36,4 @@ You will need to set up an AWS IAM user with the appropriate serverless provisio
 ## Deploy
 Deploy infrastructure to cloudformation from the serverless.yml file and assets
 
-    sls deploy
+    sls deploy -v

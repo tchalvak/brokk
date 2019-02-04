@@ -1,0 +1,67 @@
+service: thor
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  profile: icarus-serverless
+functions:
+  register: #register a new customer
+    handler: src/functions/mock.post
+    events:
+      - http:
+          path: register
+          method: post
+  order: # make an order
+    handler: src/functions/mock.post
+    events:
+      - http:
+          path: order
+          method: post
+  subscribe: # subscribe to a plan
+    handler: src/functions/mock.post
+    events:
+      - http:
+          path: subscribe
+          method: post
+  payment-method: # enter a new payment method
+    handler: src/functions/mock.post
+    events:
+      - http:
+          path: payment-method/card
+          method: post
+      - http:
+          path: payment-method/bank-account
+          method: post
+      - http:
+          path: payment-method/source
+          method: post
+  initiate-payment-intent: # This would try to start a payment cascade
+    handler: src/functions/mock.post
+    events:
+      - http:
+          path: initiate-payment-intent
+          method: post
+  payments:
+    handler: src/functions/mock.get
+    events:
+      - http:
+          path: payment-intent
+          method: get
+  search-transactions:
+    handler: src/functions/mock.get
+    events:
+      - http:
+          path: search-transactions
+          method: get
+  query: # A multi-purpose catchall query endpoint, for querying various data not covered above
+    handler: src/functions/mock.get
+    events:
+      - http:
+          path: query
+          method: get
+  mutate: # A catchall mutation endpoint for creating modifications not handled above
+    handler: src/functions/mock.post
+    events:
+      - http:
+          path: mutate
+          method: post
