@@ -41,11 +41,11 @@ functions:
           path: payment-method/source
           method: post
           cors: true
-  initiate-payment-intent: # This would try to start a payment cascade
+  initiate-payment-intent: # This would start a request for a payment cascade via posted json payment-methods on a customer's account
     handler: src/functions/mock.post
     events:
       - http:
-          path: initiate-payment-intent/
+          path: initiate-payment-intent
           method: post
           cors: true
   payments:

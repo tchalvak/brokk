@@ -13,7 +13,10 @@ curl -G "${base}query"
 echo -e "\n====================================== Registration endpoint ================================="
 
 curl -d '{ "mock-endpoint":true }' -H "Content-Type: application/json" -X POST "${base}register"
-#curl -G "${base}register"
+
+echo -e "\n====================================== Try to initiate a payment ================================="
+
+curl -d '{ "method-1": 56223, "method-2": 76343 }' -H "Content-Type: application/json" -X POST "${base}initiate-payment-intent"
 
 echo -e "\n===================================== End ========================================"
 

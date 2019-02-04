@@ -25,4 +25,4 @@ module.exports = {
   delete: mock,
 }
 
-// Example local invocation: sls invoke local --function charge --data '{ "mock": "The lambda will return the same regardless of input." }'
+// Example local invocation: sls invoke local --function register --data '{ "mock": "The lambda will return the same regardless of input." }'
