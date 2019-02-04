@@ -28,9 +28,16 @@ The first focus here will be the prototyping/CI stage.
 
 ## Install
 
+
     npm install -g serverless
 
 ## Test
+Install pytest and test requirements:
+
+    pip3 install --user -r requirements.txt
+    sudo pip3 install -U pytest
+
+Run the api tests:
 
     python3 -m pytest ./src/tests
 

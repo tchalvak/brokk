@@ -11,57 +11,68 @@ functions:
       - http:
           path: register
           method: post
+          cors: true
   order: # make an order
     handler: src/functions/mock.post
     events:
       - http:
           path: order
           method: post
+          cors: true
   subscribe: # subscribe to a plan
     handler: src/functions/mock.post
     events:
       - http:
           path: subscribe
           method: post
+          cors: true
   payment-method: # enter a new payment method with information
     handler: src/functions/mock.post
     events:
       - http:
           path: payment-method/card
           method: post
+          cors: true
       - http:
           path: payment-method/bank-account
           method: post
+          cors: true
       - http:
           path: payment-method/source
           method: post
+          cors: true
   initiate-payment-intent: # This would try to start a payment cascade
     handler: src/functions/mock.post
     events:
       - http:
           path: initiate-payment-intent/
           method: post
+          cors: true
   payments:
     handler: src/functions/mock.get
     events:
       - http:
-          path: payment-intent
+          path: payments
           method: get
+          cors: true
   search-transactions:
     handler: src/functions/mock.get
     events:
       - http:
           path: search-transactions
           method: get
+          cors: true
   query: # A multi-purpose catchall query endpoint, for querying various data not covered above
     handler: src/functions/mock.get
     events:
       - http:
           path: query
           method: get
+          cors: true
   mutate: # A catchall mutation endpoint for creating modifications not handled above
     handler: src/functions/mock.post
     events:
       - http:
           path: mutate
           method: post
+          cors: true

@@ -1,11 +1,11 @@
 // Simply mock out a response for get and post endpoints
 
-const mock = data => {
+const get = data => {
   return { mock: true }
 }
 
 const mock = (event, context, callback) => {
-  const res = mock(event)
+  const res = get(event)
   const headersSet = {
     'Access-Control-Allow-Origin': '*', // Temporarily allow * CORS for rapid prototyping
     'Access-Control-Allow-Credentials': true,
