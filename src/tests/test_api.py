@@ -50,4 +50,3 @@ class TestApi:
                 json.loads(data) is not False and
                 len(json.loads(data)) > 0
             )
-
